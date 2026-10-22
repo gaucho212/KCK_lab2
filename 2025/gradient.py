@@ -6,26 +6,9 @@ import colorsys
 
 def hsv2rgb(h, s, v):
     
-    h = h % 1.0 
-    c = v * s
-    h_prime = h * 6.0
-    x = c * (1.0 - abs((h_prime % 2.0) - 1.0))
-    m = v - c
+    (r,g,b) = colorsys.hsv_to_rgb(h,s,v)
 
-    if 0.0 <= h_prime < 1.0:
-        r_p, g_p, b_p = c, x, 0.0
-    elif 1.0 <= h_prime < 2.0:
-        r_p, g_p, b_p = x, c, 0.0
-    elif 2.0 <= h_prime < 3.0:
-        r_p, g_p, b_p = 0.0, c, x
-    elif 3.0 <= h_prime < 4.0:
-        r_p, g_p, b_p = 0.0, x, c
-    elif 4.0 <= h_prime < 5.0:
-        r_p, g_p, b_p = x, 0.0, c
-    else:
-        r_p, g_p, b_p = c, 0.0, x
-
-    return (r_p + m, g_p + m, b_p + m)
+    return (r,g,b)
 
 
 def gradient_rgb_bw(v):
