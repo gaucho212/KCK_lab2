@@ -3,11 +3,12 @@ import matplotlib.pyplot as plt
 from matplotlib import rc
 import numpy as np
 from matplotlib import colors
+import colorsys
 
-# konwerter: nie trzeba implementować samemu, można wykorzystać gotową funkcję z biblioteki
+
 def hsv2rgb(h, s, v):
-    #TODO
-    return (h, s, v)
+    r,g,b = colorsys.hsv_to_rgb(h,s,v)
+    return (r, g, b)
 
 # poniżej znajdują się funkcje modelujące kolejne gradienty z zadania.
 # v to pozycja na osi ox: v jest od 0 do 1. Zewnetrzna funkcja wywołuje te metody
