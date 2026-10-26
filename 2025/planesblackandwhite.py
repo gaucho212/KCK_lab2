@@ -25,6 +25,7 @@ def mozaika(images, tresholds, modes):
         i += 1
 
     fig.subplots_adjust(left=0, right=1, bottom=0, top=1, wspace=0, hspace=0)
+    fig.savefig('blac_white_planes_conturs.pdf')    
     plt.show()
 
 
